@@ -36,9 +36,10 @@ bootstrap.min.css" rel= "stylesheet">
 		<div class = "h-100 p-2">
 			<h5><b><%=book.getName() %></b></h5>
 			<p><%= book.getAuthor() %>
-			<p><%= book.getPublisher() %> | <%=book.getReleaseDate() %>
-			<p><%= book.getDescription().substring(0, 60) %>...
+			<br><%= book.getPublisher() %> | <%=book.getReleaseDate() %>
 			<p><%= book.getUnitPrice() %>원
+			<p> <a href=" ./book.jsp?id=<%=book.getBookId() %>"
+		class="btn btn-secondary" role="buttton"> 상세정보 &raquo;></a>
 			</div>
 		</div>
 		<%
@@ -47,6 +48,8 @@ bootstrap.min.css" rel= "stylesheet">
 		
 		</div>
 		<%@ include file="footer.jsp" %>
+		
+		
 		
 </div>
 </body>
