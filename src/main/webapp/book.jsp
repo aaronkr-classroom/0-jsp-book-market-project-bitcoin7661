@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
  <%@ page import = "dto.Book" %>
- <jsp:useBean id = "bookDAO" class = "dao.BookRepository" scope="session" />
+ <%@ page import="dao.BookRepository" %>
  
 
 <html>
@@ -24,7 +24,8 @@ bootstrap.min.css" rel = "stylesheet">
 		
 		<%
 			String id=request.getParameter("id");
-			Book book=bookDAO.getBookById(id);
+			BookRepository dao=BookRepository.getInstance();
+			Book book=dao.getBookById(id);
 		%>
 		
 	<div class="row align-items-md-stretch">
