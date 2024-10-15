@@ -2,23 +2,40 @@
     pageEncoding="UTF-8"%>
 <%@ page import="dto.Book" %>
 <%@ page import="dao.BookRepository" %>
+<%@ page import="com.oreilly.servlet.*" %>
+<%@ page import="com.oreilly.servlet.multipart.*" %>
 
 <!DOCTYPE html>
 <% 
 	request.setCharacterEncoding("UTF-8");
+
+	String filename="";
 	
-	String bookId=request.getParameter("bookId");
-	String name=request.getParameter("name");
-	String unitPrice=request.getParameter("unitPrice");
-	String author=request.getParameter("author");
-	String publisher=request.getParameter("publisher");
-	String releaseDate=request.getParameter("releaseDate");
-	String description=request.getParameter("description");
-	String category=request.getParameter("category");
-	String unitsInStock=request.getParameter("unitsInStock");
-	String condition=request.getParameter("condition");
 	
-	int price;
+	String realFolder="\\Users\\ijaeseong\\Documents\\GitHub\\0-jsp-book-market-project-bitcoin7661\\
+		.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\
+		BookMarket\\resources\\images"
+	int maxSize = 5 * 1024 * 1024; // 최대 업로드될 파일의 크기 5MB
+	String encType, new DefaultFileRenamePolicy());
+		
+		
+	
+	String bookId=multi.getParameter("bookId");
+	String name=multi.getParameter("name");
+	String unitPrice=multi.getParameter("unitPrice");
+	String author=multi.getParameter("author");
+	String publisher=multi.getParameter("publisher");
+	String releaseDate=multi.getParameter("releaseDate");
+	String description=multi.getParameter("description");
+	String category=multi.getParameter("category");
+	String unitsInStock=multi.getParameter("unitsInStock");
+	String condition=multi.getParameter("condition");
+	
+	Enumeration files="multi.getFileNames();"
+	String fname=(String) files.nextElement();
+	String fileName=multi.getFilesystemName(fnam);
+	
+	Integer price;
 	
 	if (unitPrice.isEmpty())
 		price=0;
@@ -45,6 +62,7 @@ BookRepository dao=BookRepository.getInstance();
 	newBook.setCategory(category);
 	newBook.setUnitsInStock(stock);
 	newBook.setCondition(condition);
+	newBook.setFilename(fileName);
 	
 	dao.addBook(newBook);
 	
