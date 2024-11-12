@@ -2,8 +2,8 @@
     pageEncoding="utf-8"%>
  <%@ page import = "dto.Book" %>
  <%@ page import="dao.BookRepository" %>
+ <%@ page errorPage = "exceptionNoBookId.jsp" %>
  
-
 <html>
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3-alpha/dist/css/
