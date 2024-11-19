@@ -12,9 +12,8 @@
 	String filename="";
 	
 	
-	 String realFolder="\\Users\\ijaeseong\\Documents\\GitHub\\0-jsp-book-market-project-bitcoin7661\\
-		.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\
-		BookMarket\\resources\\images"
+	 String realFolder="/Users/ijaeseong/Documents/GitHub/0-jsp-book-market-project-bitcoin7661
+			 /.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/BookMarket/resources/images";
 	int maxSize = 5 * 1024 * 1024; // 최대 업로드될 파일의 크기 5MB
 	String encType, new DefaultFileRenamePolicy());
 		

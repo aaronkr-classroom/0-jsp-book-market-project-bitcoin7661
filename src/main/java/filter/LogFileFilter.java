@@ -28,10 +28,10 @@ public class LogFileFilter implements Filter {
 	}
 	
 	public void doFilter(ServletRequest request, ServletResponse response,
-			i1terChain chain) throws java.io.IOException, ServletException {
+			ilterChain chain) throws java.io.IOException, ServletException {
 		
-		writer.prinln(" 접속한 클라이언트 IP : " + request.getRemoteAddr());
-		long start = System.currentTimMillis();
+		writer.println(" 접속한 클라이언트 IP : " + request.getRemoteAddr());
+		long start = System.currentTimeMillis();
 		writer.println(" 요청 처리 시작 시각:" + getCurrentTime());
 		
 		chain.doFilter(request, response);
